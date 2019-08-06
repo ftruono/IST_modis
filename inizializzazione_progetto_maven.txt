@@ -1,0 +1,67 @@
+1) posizionarsi sulla directory su cui si vuole creare il progetto, es. root del workspace
+
+2) digitare il comando: mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeVersion=1.4
+   e su richiesta valorizzare il groupId e artifactId come si desidera, es:
+
+    groupId=com.overntet.esercitazione
+    artifactId=esempioSpring
+
+    altri parametri possono rimanere ai valori di default
+
+3) la directorory src/main dovrà contenere tre sottodirectory: java, webapp e resources (se non ci sono occorre crearle)
+     la directory java conterrà i package con le varie classi dei sorgenti
+     la directory webapp conterrà eventuali file di frontend e due sotto directory WEB-INF (contenente il web.xml) e META-INF (in cui inserire il file contex.xml descritto sotto)
+     la directory resources conterrà altri file di risorse applicative ed in particolare, per l'utilizzo di JPA, sarà successivamente presente il file META-INF/persistence.xml
+
+4) digitare il comando: mvn clean install
+   per importare le eventuali librerie mancanti
+
+5) nella cartella webapp/META-INF posso creare il file contex.xml che verrà valorizzato con nome della context root dell'applicazione es contenuto file:
+   
+		<?xml version="1.0" encoding="UTF-8"?>
+		<Context path="/springRest"/>
+		
+   in questo modo l'applicazione risponde all'url: http://localhost:8080/springRest indipendentemente da come si chiama il progetto
+
+
+6) importare il progetto dentro ad eclipse (import maven project)
+
+
+7) nel file pom.xml aggiungo le dipendenze che servono, ad esempio per JPA
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.0</version>
+		</dependency>
+
+8) organizzare il progetto con i diversi package
+   com.overntet.esercitazione.entity (se utilizzo jpa contiene le classi @Entity)
+   com.overntet.esercitazione.model (oppure com.overntet.esercitazione.dto per creare oggetti contenenti dati da trasferire all'esterno)
+   com.overntet.esercitazione.repository  (se utilizzo spring / com.overntet.esercitazione.dao senza spring)
+   com.overntet.esercitazione.service
+   com.overntet.esercitazione.controller
+   com.overntet.esercitazione.config (per le classi di configurazione di Spring, nel caso si voglia utilizzare la configurazione 
+                                      tramite classi anzichè tramite xml)
+   
+9) importare da DB degli entity utilizzando il tool di Eclipse (questa operazione creerà anche il file persistence.xml
+   che dovrà essere ulteriormente configurato manualmente
+
+10) configurare il persistence.xml con i parametri per accedere a database
+
+11) iniziare a costruire i DAO / repository che occorrono
+
+11) iniziare a costruire le classi di Business Logic (Service / Facade) che occorrono
+
+11) iniziare a costruire i Controller che occorrono
+
+
