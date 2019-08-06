@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File creato - martedì-agosto-06-2019   
+--  File creato - martedÃ¬-agosto-06-2019   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence SEQ_AMBULATORI
@@ -228,7 +228,7 @@ Insert into TERAPIE_AMBULATORI (ID_TERAPIA,ID_AMBULATORIO) values ('2','1');
 --  DDL for Index PK_ID_PRENOTAZIONI
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "PK_ID_PRENOTAZIONI" ON "PRENOTAZIONI" ("ID_AMBULATORI", "ID_CLIENTI") 
+  CREATE UNIQUE INDEX "PK_ID_PRENOTAZIONI" ON "PRENOTAZIONI" ("ID_AMBULATORI", "ID_CLIENTI", "DATA_ORA") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
