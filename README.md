@@ -2,7 +2,7 @@
 
 # Gestionale per istituto di Fisioterapia:
 
-![alt text](https://github.com/ftruono/IST_modis/blob/master/UML/IST_UML.png)
+![alt text](https://github.com/ftruono/IST_modis/blob/master/UML/IST_UML_noseq.png)
 
 ### Le funzionalità da implementare sono:
 - **Anagrafiche** di tutti i tipi di utenti esclusi i gestori.
