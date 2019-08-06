@@ -1,6 +1,9 @@
 # Progetto Finale Corso Adecco Formazione
 
 # Gestionale per istituto di Fisioterapia:
+
+![alt text](https://github.com/ftruono/IST_modis/blob/master/UML/IST_UML.png)
+
 ### Le funzionalità da implementare sono:
 - **Anagrafiche** di tutti i tipi di utenti esclusi i gestori.
 - **Terapie praticate** dall'istituto.
@@ -18,7 +21,7 @@
 ### Database oracle:
 -  DDL e DML script (separati)
 
-### Java realizzare un'applicazione Spring / Maven che preveda: 
+### Java realizzare un'applicazione Spring / Maven che preveda:
 - JPA (hibernate o eclipselink)
 - REST API
 - Per almeno una tabella di DB devono essere presenti tutte le operazioni di CRUD da API
@@ -29,4 +32,4 @@
 - Commenti esplicativi sui metodi del controller meno immediati.
 - Una collection di postman contenente le chiamate implementate (*con relativo json da trasmettere*).
 
-Tutti i membri del team devono saper presentare il lavoro del gruppo (e non solo la parte che hanno svolto direttamente) 
+Tutti i membri del team devono saper presentare il lavoro del gruppo (e non solo la parte che hanno svolto direttamente)
