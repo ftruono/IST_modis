@@ -152,33 +152,33 @@ SET DEFINE OFF;
 Insert into AMBULATORI (ID,NOME) values ('1','Policlinico Gemelli');
 REM INSERTING into ANAGRAFICHE
 SET DEFINE OFF;
-Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('1','Francesco','Truono',to_date('09-GIU-97','DD-MON-RR'),'TRNSGGDJ',null);
-Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('2','Bovino','Romino',to_date('06-AGO-19','DD-MON-RR'),'HGDGHGS',null);
-Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('3','Ilberto','Medico',to_date('01-AGO-19','DD-MON-RR'),'GJHDBHW','33387098');
+--Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('1','Francesco','Truono',to_date('09-GIU-97','DD-MON-RR'),'TRNSGGDJ',null);
+--Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('2','Bovino','Romino',to_date('06-AGO-19','DD-MON-RR'),'HGDGHGS',null);
+--Insert into ANAGRAFICHE (ID,NOME,COGNOME,DATA_NASCITA,CF,N_CELLULARE) values ('3','Ilberto','Medico',to_date('01-AGO-19','DD-MON-RR'),'GJHDBHW','33387098');
 REM INSERTING into CLIENTI
 SET DEFINE OFF;
-Insert into CLIENTI (ID,ID_ANAG) values ('1','1');
-Insert into CLIENTI (ID,ID_ANAG) values ('2','2');
+--Insert into CLIENTI (ID,ID_ANAG) values ('1','1');
+--Insert into CLIENTI (ID,ID_ANAG) values ('2','2');
 REM INSERTING into MEDICI
 SET DEFINE OFF;
-Insert into MEDICI (ID,ID_ANAG,ISMEDICO) values ('1','3','1');
+--Insert into MEDICI (ID,ID_ANAG,ISMEDICO) values ('1','3','1');
 REM INSERTING into MEDICI_TERAPIE
 SET DEFINE OFF;
-Insert into MEDICI_TERAPIE (ID_MEDICO,ID_TERAPIA) values ('1','1');
+--Insert into MEDICI_TERAPIE (ID_MEDICO,ID_TERAPIA) values ('1','1');
 REM INSERTING into PRENOTAZIONI
 SET DEFINE OFF;
-Insert into PRENOTAZIONI (ID_AMBULATORI,ID_CLIENTI,DATA_ORA,ATTIVO) values ('1','1',to_date('23-AGO-19','DD-MON-RR'),'1');
+--Insert into PRENOTAZIONI (ID_AMBULATORI,ID_CLIENTI,DATA_ORA,ATTIVO) values ('1','1',to_date('23-AGO-19','DD-MON-RR'),'1');
 REM INSERTING into STAFF
 SET DEFINE OFF;
 Insert into STAFF (ID,ID_ANAG,LIVELLO) values ('1','3','1');
 REM INSERTING into TERAPIE
 SET DEFINE OFF;
-Insert into TERAPIE (ID,NOME) values ('1','Spezza Gambe');
-Insert into TERAPIE (ID,NOME) values ('2','Aggiusta mani');
-Insert into TERAPIE (ID,NOME) values ('3','Massaggio Bello');
+--Insert into TERAPIE (ID,NOME) values ('1','Spezza Gambe');
+--Insert into TERAPIE (ID,NOME) values ('2','Aggiusta mani');
+--Insert into TERAPIE (ID,NOME) values ('3','Massaggio Bello');
 REM INSERTING into TERAPIE_AMBULATORI
 SET DEFINE OFF;
-Insert into TERAPIE_AMBULATORI (ID_TERAPIA,ID_AMBULATORIO) values ('2','1');
+--Insert into TERAPIE_AMBULATORI (ID_TERAPIA,ID_AMBULATORIO) values ('2','1');
 --------------------------------------------------------
 --  DDL for Index PK_ID_AMBULATORI
 --------------------------------------------------------
