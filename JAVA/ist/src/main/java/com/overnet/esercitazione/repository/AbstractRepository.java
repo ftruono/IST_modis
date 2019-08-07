@@ -1,7 +1,7 @@
 package com.overnet.esercitazione.repository;
 
 import java.util.List;
-
+import com.overnet.esercitazione.entity.Anagrafiche;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,6 +17,8 @@ public abstract class AbstractRepository<E> {
 	protected EntityManager em;
 
 	public void create(E entity) {
+//		((Anagrafiche)entity).setId(19);
+//		System.out.println(entity.toString());
 		em.persist(entity);
 	}
 

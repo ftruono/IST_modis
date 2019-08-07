@@ -38,7 +38,7 @@ public class AnagraficheServiceImpl extends AbstractService<AnagraficheModel, An
 	protected Anagrafiche converterModelToEntity(AnagraficheModel model) {
 		Anagrafiche entity = new Anagrafiche();
 		if (entity != null) {
-			entity.setId(model.getId());
+			//entity.setId(model.getId());
 			entity.setCognome(model.getCognome());
 			entity.setNome(model.getNome());
 			entity.setDataNascita(model.getDataNascita());
@@ -50,12 +50,15 @@ public class AnagraficheServiceImpl extends AbstractService<AnagraficheModel, An
 
 	@Override
 	protected AnagraficheModel preCreate(AnagraficheModel model) {
+		if(model == null)
+			System.out.println("SONO NULL!!");
+		/*
 		model.setId(new Long(0));
 		model.setCognome(new String());
 		model.setNome(new String());
 		model.setDataNascita(new Date());
 		model.setCf(new String());
-		model.setnCellulare(new String());
+		model.setnCellulare(new String());*/
 		return model;
 	}
 

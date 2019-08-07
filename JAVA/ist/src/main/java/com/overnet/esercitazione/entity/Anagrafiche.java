@@ -16,8 +16,8 @@ public class Anagrafiche implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="ANAGRAFICHE_ID_GENERATOR", sequenceName="SEQ_ANAGRAFICHE")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ANAGRAFICHE_ID_GENERATOR")
+	@SequenceGenerator(name="ANAGRAFICHE_ID_GENERATOR", sequenceName="SEQ_ANAGRAFICHE", allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="ANAGRAFICHE_ID_GENERATOR")
 	private long id;
 
 	private String cf;
@@ -162,4 +162,9 @@ public class Anagrafiche implements Serializable {
 		return staff;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.id + this.cognome + this.cf;
+	}
 }
