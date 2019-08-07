@@ -1,4 +1,5 @@
-package com.overnet.model;
+
+package com.overnet.esercitazione.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,14 +7,14 @@ import java.util.Date;
 public class TerapieModel implements Serializable {
 
 	private static final long serialVersionUID = 5772264326922388801L;
-	private Integer id;
+	private long id;
 	private String nome;
 	private String cod;
 	
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

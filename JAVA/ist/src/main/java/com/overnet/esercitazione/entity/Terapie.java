@@ -10,7 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@NamedQueries({
 @NamedQuery(name="Terapie.findAll", query="SELECT t FROM Terapie t")
+, @NamedQuery(name="Terapie.findByAmbulatori", query="Select t from Terapie t, t.ambulatoris a where a.nome = :nomeAmbulatorio")
+, @NamedQuery(name="Terapie.findByMedici", query="Select t from Terapie t, t.medicis m where m.id = :idMedico and m.ismedico = :isMedico")
+
+})
 public class Terapie implements Serializable {
 	private static final long serialVersionUID = 1L;
 
