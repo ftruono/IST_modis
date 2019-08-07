@@ -51,7 +51,7 @@ public abstract class AbstractService<M, E> {
 	}
 
 
-	private List<M> converterEntityListToModelList(List<E> entityList) {
+	protected List<M> converterEntityListToModelList(List<E> entityList) {
 		List<M> modelList = new ArrayList<M>();
 		if (entityList != null) {
 			for (E entity : entityList) {
