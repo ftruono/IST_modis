@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence
+	version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+>
 	<persistence-unit name="ist">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.overnet.esercitazione.entity.Ambulatori</class>
 		<class>com.overnet.esercitazione.entity.Anagrafiche</class>
 		<class>com.overnet.esercitazione.entity.Clienti</class>
@@ -8,5 +14,15 @@
 		<class>com.overnet.esercitazione.entity.Prenotazioni</class>
 		<class>com.overnet.esercitazione.entity.Staff</class>
 		<class>com.overnet.esercitazione.entity.Terapie</class>
+
+		<!-- DB Connections Start -->
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:87.6.245.56:33771/ist" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="password" />
+		</properties>
+		<!-- DB Connections End -->
+
 	</persistence-unit>
 </persistence>
