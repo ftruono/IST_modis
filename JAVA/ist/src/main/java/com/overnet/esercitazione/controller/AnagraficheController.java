@@ -4,20 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.overnet.esercitazione.Anagrafiche;
-import com.overnet.esercitazione.AnagraficheService;
+import com.overnet.esercitazione.model.AnagraficheModel;
+import com.overnet.esercitazione.service.AnagraficheService;
 import com.overnet.esercitazione.service.Service;
 
 @RestController
 @RequestMapping("Anagrafiche")
-public class AnagraficheController extends AbstractController<Anagrafiche> {
+public class AnagraficheController extends AbstractController<AnagraficheModel> {
 
-	@Autowired
-	private AnagraficheService AnagraficheService;
+ @Autowired
+ private AnagraficheService anagraficheService;
 
-	@Override
-	protected Service<Anagrafiche> getService() {
-		return AnagraficheService;
-	}
-	
+ @Override
+ protected Service<AnagraficheModel> getService() {
+  return anagraficheService;
+ }
+ 
 }
