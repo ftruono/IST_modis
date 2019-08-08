@@ -26,10 +26,10 @@ public class TerapieController extends AbstractController<TerapieModel> {
 		return terapieService;
 	}
 	
-	@RequestMapping(value="{id}",method = RequestMethod.GET)
-	protected List<TerapieModel> getListById(long id){
-		return terapieService.getTerapieFromAmbulatorioId(id);
-	}
+//	@RequestMapping(value="{id}",method = RequestMethod.GET)
+//	protected List<TerapieModel> getListById(long id){
+//		return terapieService.getTerapieFromAmbulatorioId(id);
+//	}
 	
    
    

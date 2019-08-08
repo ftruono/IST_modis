@@ -1,14 +1,14 @@
 package com.overnet.esercitazione.repository;
 
 import java.util.List;
-
+import org.springframework.stereotype.Repository;
 import com.overnet.esercitazione.entity.Terapie;
 
-
+@Repository
 public class TerapieRepositoryImpl extends AbstractRepository<Terapie> implements TerapieRepository {
 
-	public TerapieRepositoryImpl(Class<Terapie> entityClass) {
-		super(entityClass);
+	public TerapieRepositoryImpl() {
+		super(Terapie.class);
 	}
 
 	@Override

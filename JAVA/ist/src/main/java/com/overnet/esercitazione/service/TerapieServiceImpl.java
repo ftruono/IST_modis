@@ -18,11 +18,11 @@ import com.overnet.esercitazione.repository.TerapieRepository;
 public class TerapieServiceImpl extends AbstractService<TerapieModel, Terapie> implements TerapieService {
 
 	@Autowired
-	private TerapieRepository anaRepository;
+	private TerapieRepository terapieRepository;
 
 	@Override
 	protected Repository<Terapie> getRepository() {
-		return anaRepository;
+		return terapieRepository;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class TerapieServiceImpl extends AbstractService<TerapieModel, Terapie> i
 		if (entity != null) {
 			entity.setAmbulatoris(null);
 			entity.setCod(model.getCod());
-			entity.setId(model.getId());
+			//entity.setId(model.getId());
 			entity.setMedicis(null);
 			entity.setNome(model.getNome());
 		}
@@ -56,7 +56,7 @@ public class TerapieServiceImpl extends AbstractService<TerapieModel, Terapie> i
 
 	@Override
 	public List<TerapieModel> getTerapieFromAmbulatorioId(long id) {
-		return super.converterEntityListToModelList(anaRepository.getTerapieFromAmbulatorioId(id));
+		return super.converterEntityListToModelList(terapieRepository.getTerapieFromAmbulatorioId(id));
 	}
 
 	

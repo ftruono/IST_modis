@@ -1,6 +1,8 @@
 package com.overnet.esercitazione.service;
 
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,16 +52,19 @@ public class AnagraficheServiceImpl extends AbstractService<AnagraficheModel, An
 
 	@Override
 	protected AnagraficheModel preCreate(AnagraficheModel model) {
-		if(model == null)
-			System.out.println("SONO NULL!!");
-		/*
-		model.setId(new Long(0));
-		model.setCognome(new String());
-		model.setNome(new String());
-		model.setDataNascita(new Date());
-		model.setCf(new String());
-		model.setnCellulare(new String());*/
-		return model;
+//		if(model == null)
+//			System.out.println("SONO NULL!!");
+		if ( checkCf(model.getCf()) )
+			return model;
+		// TODO:: GESTIONE NULL
+		else return null;
+	}
+	
+	private static boolean checkCf(String cf) {
+		cf.toUpperCase();		
+		Pattern p = Pattern.compile("[A-Z]{6}[0-9]{2}[ABCDEHLMPRST]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Za-z]{1}");
+		Matcher m = p.matcher(cf);
+		return m.matches();
 	}
 
 }
