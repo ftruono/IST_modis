@@ -5,4 +5,5 @@ import com.overnet.esercitazione.model.TerapieModel;
 
 public interface TerapieService extends Service<TerapieModel> {
 	public List<TerapieModel> getTerapieFromAmbulatorioId(long id);
+	public List<TerapieModel> getTerapieFromMedicoId(long id);
 }

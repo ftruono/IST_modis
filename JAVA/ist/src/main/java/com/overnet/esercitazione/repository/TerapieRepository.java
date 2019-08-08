@@ -6,6 +6,6 @@ import com.overnet.esercitazione.entity.Terapie;
 
 public interface TerapieRepository extends Repository<Terapie> {
    public List<Terapie> getTerapieFromAmbulatorioId(long id);
-   
+	public List<Terapie> getTerapieFromMedicoId(long id);
    
 }

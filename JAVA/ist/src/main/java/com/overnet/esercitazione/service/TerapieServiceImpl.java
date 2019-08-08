@@ -59,6 +59,9 @@ public class TerapieServiceImpl extends AbstractService<TerapieModel, Terapie> i
 		return super.converterEntityListToModelList(terapieRepository.getTerapieFromAmbulatorioId(id));
 	}
 
-	
+	@Override
+	public List<TerapieModel> getTerapieFromMedicoId(long id) {
+		return super.converterEntityListToModelList(terapieRepository.getTerapieFromMedicoId(id));
+	}
 
 }

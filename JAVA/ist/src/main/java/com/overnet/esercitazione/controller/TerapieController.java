@@ -30,14 +30,20 @@ public class TerapieController extends AbstractController<TerapieModel> {
 	}
 	// TODO:: RANGE AMBULATORI
     @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE,
-            method = RequestMethod.GET , value = "/Ambulatorio/{id}")
+            method = RequestMethod.GET , value = "/Ambulatori/{id}")
     @ResponseBody
 //	@RequestMapping(value="{id}",method = RequestMethod.GET)
-	protected List<TerapieModel> getListById(@PathVariable Long id){
+	protected List<TerapieModel> getListByIdAmbulatorio(@PathVariable Long id){
 		return terapieService.getTerapieFromAmbulatorioId(id);
 	}
 	
-   
+    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE,
+            method = RequestMethod.GET , value = "/Medici/{id}")
+    @ResponseBody
+//	@RequestMapping(value="{id}",method = RequestMethod.GET)
+	protected List<TerapieModel> getListByIdMedico(@PathVariable Long id){
+		return terapieService.getTerapieFromMedicoId(id);
+	}
    
 	
 }

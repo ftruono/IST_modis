@@ -13,7 +13,7 @@ import java.util.List;
 @NamedQueries({
 @NamedQuery(name="Terapie.findAll", query="SELECT t FROM Terapie t")
 , @NamedQuery(name="Terapie.findByAmbulatori", query="Select t from Terapie t, t.ambulatoris a where a.id = :idAmbulatorio")
-, @NamedQuery(name="Terapie.findByMedici", query="Select t from Terapie t, t.medicis m where m.id = :idMedico and m.ismedico = :isMedico")
+, @NamedQuery(name="Terapie.findByMedici", query="Select t from Terapie t, t.medicis m where m.id = :idMedico")
 
 })
 public class Terapie implements Serializable {

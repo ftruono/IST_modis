@@ -16,4 +16,8 @@ public class TerapieRepositoryImpl extends AbstractRepository<Terapie> implement
 		return this.em.createNamedQuery("Terapie.findByAmbulatori",Terapie.class).setParameter("idAmbulatorio",id).getResultList();
 	}
 
+	@Override
+	public List<Terapie> getTerapieFromMedicoId(long id) {
+		return this.em.createNamedQuery("Terapie.findByMedici",Terapie.class).setParameter("idMedico",id).getResultList();
+	}
 }
