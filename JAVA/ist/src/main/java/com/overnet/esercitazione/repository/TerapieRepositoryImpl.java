@@ -13,7 +13,7 @@ public class TerapieRepositoryImpl extends AbstractRepository<Terapie> implement
 
 	@Override
 	public List<Terapie> getTerapieFromAmbulatorioId(long id) {
-		return this.em.createNamedQuery("Terapie.findByAmbulatori",Terapie.class).setParameter(":nomeAmbulatorio",id).getResultList();
+		return this.em.createNamedQuery("Terapie.findByAmbulatori",Terapie.class).setParameter("idAmbulatorio",id).getResultList();
 	}
 
 }

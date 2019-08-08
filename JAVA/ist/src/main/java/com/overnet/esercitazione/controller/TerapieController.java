@@ -3,8 +3,11 @@ package com.overnet.esercitazione.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.overnet.esercitazione.model.AnagraficheModel;
@@ -25,11 +28,14 @@ public class TerapieController extends AbstractController<TerapieModel> {
 	protected Service<TerapieModel> getService() {
 		return terapieService;
 	}
-	
+	// TODO:: RANGE AMBULATORI
+    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE,
+            method = RequestMethod.GET , value = "/Ambulatorio/{id}")
+    @ResponseBody
 //	@RequestMapping(value="{id}",method = RequestMethod.GET)
-//	protected List<TerapieModel> getListById(long id){
-//		return terapieService.getTerapieFromAmbulatorioId(id);
-//	}
+	protected List<TerapieModel> getListById(@PathVariable Long id){
+		return terapieService.getTerapieFromAmbulatorioId(id);
+	}
 	
    
    
