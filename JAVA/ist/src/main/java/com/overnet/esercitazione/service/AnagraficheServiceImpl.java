@@ -52,19 +52,27 @@ public class AnagraficheServiceImpl extends AbstractService<AnagraficheModel, An
 
 	@Override
 	protected AnagraficheModel preCreate(AnagraficheModel model) {
-//		if(model == null)
-//			System.out.println("SONO NULL!!");
 		if ( checkCf(model.getCf()) )
 			return model;
-		// TODO:: GESTIONE NULL
 		else return null;
 	}
 	
 	private static boolean checkCf(String cf) {
-		cf.toUpperCase();		
-		Pattern p = Pattern.compile("[A-Z]{6}[0-9]{2}[ABCDEHLMPRST]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Za-z]{1}");
+		cf = cf.toUpperCase();		
+		Pattern p = Pattern.compile("[A-Z]{6}[0-9]{2}[ABCDEHLMPRST]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}");
 		Matcher m = p.matcher(cf);
 		return m.matches();
+	}
+	
+	@Override
+	public void create(AnagraficheModel model) {
+		AnagraficheModel modelPreCreate = this.preCreate(model);
+		if ( modelPreCreate == null) {
+			System.out.println("CF NON VALIDO");
+			return;
+		}
+		Anagrafiche entity = this.converterModelToEntity(modelPreCreate);
+		getRepository().create(entity);
 	}
 
 }
